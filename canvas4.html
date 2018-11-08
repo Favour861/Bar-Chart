@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BAR CHART</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="" media="screen">
+</head>
+<style type="text/css">
+	#inputs input{
+		width: 200px;
+		height: 35px;
+		background: white;
+		border-style: none;
+		border-radius: 5px;
+		font-size: 20pt;
+		text-align: center;
+		margin-left: 10px;
+		border: 2px solid black;
+	}
+	button{
+		margin-left: 10px;
+		background: white; 
+		color: #B20000; 
+		width: 200px; 
+		height: 30px;
+		border-style: none;
+		border-radius: 5px;
+		margin-top: 20px;
+		font-family: Aharoni;
+		font-size: 20pt;
+		cursor: pointer;	
+	}
+	a:link{
+		text-decoration: none;
+		color: #B20000;
+	}
+</style>
+<body style="background: #B20000;" >
+	<center>
+	<div id="canvascon">
+		<canvas width="1200" height="510" id="houseCanvas" style="background-color: white; border: solid black; color: black; margin-top: 20px; border-radius: 5px;"></canvas>
+	</div>
+	<div id="inputs">
+		<input type="number" id="c1" max="490" oninput="chartDraw1()">
+		<input type="number" id="c2" oninput="chartDraw2()">
+		<input type="number" id="c3" oninput="chartDraw3()">
+		<input type="number" id="c4" oninput="chartDraw4()">
+		<input type="number" id="c5" oninput="chartDraw5()">
+	</div>
+	<a href="canvas4.html"><button>RESET </button></a>
+	</center>
+
+<script type="text/javascript">
+	var chart=houseCanvas.getContext('2d');
+	chart.fillRect(0,500,1200,2);
+	chart.font="15pt Segoe UI";
+	chart.fillStyle="#B20000";
+	chart.fillText("-100",0,100);
+	chart.fillText("-200",0,200);
+	chart.fillText("-300",0,300);
+	chart.fillText("-400",0,400);
+	chart.fillText("-500",0,500);
+	chart.font="10pt Segoe UI";
+	chart.fillText("-50",0,50);
+	chart.fillText("-150",0,150);
+	chart.fillText("-250",0,250);
+	chart.fillText("-350",0,350);
+	chart.fillText("-450",0,450);
+
+	chart.font="15pt Segoe UI";
+	chart.fillStyle="#B20000";
+	chart.fillText("100-",1160,100);
+	chart.fillText("200-",1160,200);
+	chart.fillText("300-",1160,300);
+	chart.fillText("400-",1160,400);
+	chart.fillText("500-",1160,500);
+	chart.font="10pt Segoe UI";
+	chart.fillText("50-",1170,50);
+	chart.fillText("150-",1170,150);
+	chart.fillText("250-",1170,250);
+	chart.fillText("350-",1170,350);
+	chart.fillText("450-",1170,450);
+
+	function chartDraw1(){
+		if(c1.value<=500){
+		chart.fillStyle="#006097";
+		value = c1.value;
+		chart.fillRect(130, 0, 80, value);
+		}else{
+			alert("Input a value between 0 and 500")
+		}
+	}
+	function chartDraw2(){
+		if(c2.value<=500){
+		chart.fillStyle="#DB7093";
+		value = c2.value;
+		chart.fillRect(350, 0, 80, value);
+		}else{
+			alert("Input a value between 0 and 500")
+		}
+	}
+	function chartDraw3(){
+		if(c3.value<=500){
+		chart.fillStyle="#2E8B57";
+		value = c3.value;
+		chart.fillRect(550, 0, 80, value);
+		}else{
+			alert("Input a value between 0 and 500")
+		}
+	}
+	function chartDraw4(){
+		if(c4.value<=500){
+		chart.fillStyle="orange";
+		value = c4.value;
+		chart.fillRect(770, 0, 80, value);
+		}else{
+			alert("Input a value between 0 and 500");
+		}
+	}
+	function chartDraw5(){
+		if(c5.value<=500){
+		chart.fillStyle="#808000";
+		value = c5.value;
+		chart.fillRect(1000, 0, 80, value);
+		}else{
+			alert("Input a value between 0 and 500")
+		}
+	}
+</script>
+</body>
+</html>
