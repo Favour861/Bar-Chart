@@ -43,11 +43,11 @@
 		<canvas width="1200" height="510" id="houseCanvas" style="background-color: white; border: solid black; color: black; margin-top: 20px; border-radius: 5px;"></canvas>
 	</div>
 	<div id="inputs">
-		<input type="number" id="c1" max="490" oninput="chartDraw1()">
-		<input type="number" id="c2" oninput="chartDraw2()">
-		<input type="number" id="c3" oninput="chartDraw3()">
-		<input type="number" id="c4" oninput="chartDraw4()">
-		<input type="number" id="c5" oninput="chartDraw5()">
+		<input type="number" id="c1" max="490" oninput="chartDraw1()" onkeydown="clearChart1(event)">
+		<input type="number" id="c2" oninput="chartDraw2()" onkeydown="clearChart2(event)">
+		<input type="number" id="c3" oninput="chartDraw3()" onkeydown="clearChart3(event)">
+		<input type="number" id="c4" oninput="chartDraw4()" onkeydown="clearChart4(event)">
+		<input type="number" id="c5" oninput="chartDraw5()" onkeydown="clearChart5(event)">
 	</div>
 	<a href="canvas4.html"><button>RESET </button></a>
 	</center>
@@ -83,15 +83,41 @@
 	chart.fillText("350-",1170,350);
 	chart.fillText("450-",1170,450);
 
-	function chartDraw1(){
-		if(c1.value<=500){
-		chart.fillStyle="#006097";
-		value = c1.value;
-		chart.fillRect(130, 0, 80, value);
-		}else{
-			alert("Input a value between 0 and 500")
+	function clearChart1(event){
+		if(event.keyCode==8){
+			chart.clearRect(130,0,80,c1.value);
 		}
 	}
+	function clearChart2(event){
+		if(event.keyCode==8){
+			chart.clearRect(350,0,80,c2.value);
+		}
+	}
+	function clearChart3(event){
+		if(event.keyCode==8){
+			chart.clearRect(550,0,80,c3.value);
+		}
+	}
+	function clearChart4(event){
+		if(event.keyCode==8){
+			chart.clearRect(770,0,80,c4.value);
+		}
+	}
+	function clearChart5(event){
+		if(event.keyCode==8){
+			chart.clearRect(1000,0,80,c5.value);
+		}
+	}
+	function chartDraw1(){
+		value = c1.value;
+		if(c1.value<=500){
+		chart.fillStyle="#006097";
+		chart.fillRect(130, 0, 80, value);
+		}else{
+			alert("Input a value between 0 and 500");
+		}
+	}
+	
 	function chartDraw2(){
 		if(c2.value<=500){
 		chart.fillStyle="#DB7093";
